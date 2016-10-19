@@ -1,5 +1,5 @@
 {
-  "name": "shrink",
+  "name": "shrink-pic",
   "version": "1.0.0",
   "description": "Command line tool which compress the .png and .jpg images.",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kashishgupta1990/shrink.git"
+    "url": "git+https://github.com/kashishgupta1990/shrink-pic.git"
   },
   "bin": {
     "shrink-pic": "./shrink-pic.js"
@@ -16,9 +16,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kashishgupta1990/shrink/issues"
+    "url": "https://github.com/kashishgupta1990/shrink-pic/issues"
   },
-  "homepage": "https://github.com/kashishgupta1990/shrink#readme",
+  "homepage": "https://github.com/kashishgupta1990/shrink-pic#readme",
   "dependencies": {
     "async": "^2.1.2",
     "commander": "^2.9.0",

@@ -1,9 +1,5 @@
-# shrink
+# shrink-pic 
 Command line tool which compress the .png and .jpg images.
-
-It's a module which convert your `JavaScript` code into some not understandable format and still it's executable.
-This module can be used to protect the code base which run's on browser's client side or we can protect the NodeJs code base as well.
-We have to mention the few options provided where `sourceDir` is mandatory field. Just mention the root path in this field and `code-protect` converts all the `.js` files present in sub-folder.
 
 ## Module Usage 
 

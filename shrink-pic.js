@@ -54,6 +54,7 @@ if (option.apiKey) {
 if (app.checkApiKeyExist(API_KEY_FILE_PATH)) {
     option.apiKey = app.readApiKey(API_KEY_FILE_PATH);
     option.apiKey = option.apiKey.toString();
+    app.setApiKey(option.apiKey);
     if (option.sourceDir) {
         var sourceStat = fs.lstatSync(option.sourceDir);
         if(sourceStat.isDirectory()){
@@ -71,7 +72,10 @@ if (app.checkApiKeyExist(API_KEY_FILE_PATH)) {
                 });
             });
             async.series(imgCompressTask, function (err, data) {
-                console.log('Final: ',arguments);
+                if(err){
+                    console.log('\nError in compressions: ', err);
+                }
+                console.log('\n-- Compression completed --\n', data.join('\n'));
                 app.exit();
             })
         }else if(sourceStat.isFile()){
@@ -91,12 +95,14 @@ if (app.checkApiKeyExist(API_KEY_FILE_PATH)) {
             }else{
                 fileName = path.basename(option.sourceDir);
                 restOfPath = path.dirname(option.sourceDir);
-                console.log('yo ',restOfPath);
                 option.destinationDir = restOfPath;
                 option.destinationDir = path.join(option.destinationDir, SINGLE_COMPRESSED_FILE_PREFIX + fileName);
             }
             app.compressImage(option.sourceDir, option.destinationDir, function (err, data) {
-                console.log(arguments);
+                if(err){
+                    console.log('\n\nError in compressions: ', err);
+                }
+                console.log('\n-- Compression completed --\n', data);
                 app.exit();
             });
         }else{

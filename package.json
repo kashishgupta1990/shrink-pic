@@ -1,6 +1,6 @@
 {
   "name": "shrink-pic",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Command line tool which compress the .png and .jpg images.",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/kashishgupta1990/shrink-pic#readme",
   "dependencies": {
     "async": "^2.1.2",
+    "cli-spinner": "^0.2.5",
     "commander": "^2.9.0",
     "mkpath": "^1.0.0",
     "path": "^0.12.7",

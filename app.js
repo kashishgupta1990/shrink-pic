@@ -1,25 +1,25 @@
 var fs = require('fs');
 var path = require('path');
 var tinify = require("tinify");
+var Spinner = require('cli-spinner').Spinner;
 
-tinify.key = "cwIrdmI45ieO4PJVyY7x1dmsbTcebozy";
-
-
-var init = function () {
-
-    var source = tinify.fromFile("./test/lion.png");
-    source.toFile("lion.png");
-
-
+var _setApiKey = function (key) {
+    tinify.key = key;
 };
 
 var _compressImage = function (imageLink, destinationLink, callback) {
+    var completeStr = imageLink + ' -> ' + destinationLink;
+    var spinner = new Spinner('Compressing: ' + completeStr);
+    spinner.start();
+    spinner.setSpinnerDelay(500);
     tinify.fromFile(imageLink).toFile(destinationLink, function (err) {
         if(err){
-            return callback(err);
+            callback(err);
         }else{
-            return callback(null, 'Shrink Success: '+destinationLink);
+            callback(null, 'Completed: ' + completeStr.trim() + '\t [Free Account Limit Used: ' + tinify.compressionCount + '/500]');
         }
+        spinner.stop(true);
+        return;
     });
 };
 
@@ -70,6 +70,7 @@ var _readApiKey = function (apiKeyPath) {
 module.exports = {
     exit: _exit,
     log: _log,
+    setApiKey: _setApiKey,
     createApiKey: _createApiKey,
     checkApiKeyExist: _checkApiKeyExist,
     readApiKey: _readApiKey,

@@ -26,7 +26,7 @@ var option = {
 // Help Window
 program
     .version(package.version)
-    .usage('[ -d destinationFolder ] [ -i 3 ] [ -k SedasdeEEW1231asd213 ] -s sourceFolder ')
+    .usage('[ -d destinationFolder ] [ -k SedasdeEEW1231asd213 ] -s sourceFolder ')
     .option('-s, --source <source-directory-path>', 'mention the source directory path.')
     .option('-d, --destination <destination-directory-path>', 'mention destination directory path.')
     // .option('-l, --level <level-of-compresssion>', 'mention level of compression.')

@@ -89,9 +89,9 @@ if (app.checkApiKeyExist(API_KEY_FILE_PATH)) {
                     var destStat = fs.lstatSync(option.destinationDir);
                     fileName = path.basename(option.sourceDir);
                     if(destStat.isDirectory()){
-                        option.destinationDir = path.join(option.destinationDir, fileName);
-                    }else if(destStat.isFile()){
                         option.destinationDir = path.join(option.destinationDir, SINGLE_COMPRESSED_FILE_PREFIX + fileName);
+                    }else if(destStat.isFile()){
+                        // do nothing
                     }
                 }
             }else{

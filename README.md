@@ -24,3 +24,5 @@ This command will save your key and will use this key to compress your images. Y
     -d, --destination <destination-directory-path>  mention destination directory path.
     -k, --apikey <api-key-save>                     mention api key to save or renew.
 
+### Read our blog for more detail.
+http://blog.kashishgupta.in/2016/10/22/compress-image-using-nodejs-shrink-pic-tool/

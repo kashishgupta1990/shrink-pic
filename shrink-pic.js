@@ -75,7 +75,7 @@ if (app.checkApiKeyExist(API_KEY_FILE_PATH)) {
                 if(err){
                     console.log('\nError in compressions: ', err);
                 }
-                console.log('\n-- Compression completed --\n', data.join('\n'));
+                console.log('\n-- Image Compression completed --\n', data.join('\n'));
                 app.exit();
             })
         }else if(sourceStat.isFile()){
@@ -87,9 +87,11 @@ if (app.checkApiKeyExist(API_KEY_FILE_PATH)) {
                     // do nothing
                 }else{
                     var destStat = fs.lstatSync(option.destinationDir);
+                    fileName = path.basename(option.sourceDir);
                     if(destStat.isDirectory()){
-                        fileName = path.basename(option.sourceDir);
-                        option.destinationDir = path.join(option.sourceDir, SINGLE_COMPRESSED_FILE_PREFIX + fileName);
+                        option.destinationDir = path.join(option.destinationDir, fileName);
+                    }else if(destStat.isFile()){
+                        option.destinationDir = path.join(option.destinationDir, SINGLE_COMPRESSED_FILE_PREFIX + fileName);
                     }
                 }
             }else{

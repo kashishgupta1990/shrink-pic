@@ -1,5 +1,5 @@
 # shrink-pic 
-Command line tool which compress the .png and .jpg images.
+Command line tool which compress the .png and .jpg images. It uses `https://tinypng.com/` API to compress your images.
 
 ## Module Usage 
 

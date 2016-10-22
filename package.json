@@ -1,6 +1,6 @@
 {
   "name": "shrink-pic",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Command line tool which compress the .png and .jpg images.",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,21 @@
   "bin": {
     "shrink-pic": "./shrink-pic.js"
   },
-  "author": "",
+  "author": {
+    "name": "Kashish Gupta",
+    "email": "kashishgupta1990@yahoo.com",
+    "url": "http://github.com/kashishgupta/"
+  },
+  "keywords": [
+    "compress image",
+    "jpg compressor",
+    "png compressor",
+    "tiny png",
+    "tiny jpg",
+    "tiny image",
+    "compress jpg",
+    "compress png"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kashishgupta1990/shrink-pic/issues"

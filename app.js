@@ -13,12 +13,14 @@ var _compressImage = function (imageLink, destinationLink, callback) {
     spinner.start();
     spinner.setSpinnerDelay(500);
     tinify.fromFile(imageLink).toFile(destinationLink, function (err) {
+        var displayStr = 'Completed: ' + completeStr.trim() + '\t [Free Account Limit Used: ' + tinify.compressionCount + '/500]';
         if(err){
             callback(err);
         }else{
-            callback(null, 'Completed: ' + completeStr.trim() + '\t [Free Account Limit Used: ' + tinify.compressionCount + '/500]');
+            callback(null, displayStr);
         }
         spinner.stop(true);
+        console.log(displayStr);
         return;
     });
 };
